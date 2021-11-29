@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+	justify-content: space-between;
+    padding: 5px;
+}
+.tutorials {
+    font-size: 35px;
+}
+ul {
+    margin: auto 10px;
+    width: 200px;
+    text-align: center;
+}
+li {
+    display: inline;
+    
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    background-color: #907c57;
+    border-radius: 30px;
+}
+
+main {
+    background-image: url(https://images8.alphacoders.com/119/thumb-1920-1192914.jpg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.form-box {
+    width: 380px;
+    height: 420px;
+    position: relative;
+    margin: 20% auto ;
+    background-color: #fff;
+    padding: 5px;
+}
+h2 {
+    width: 220px;
+    margin: 35px auto;
+    text-align: center;
+    box-shadow: 0 0 20px 9px #5225131f;
+    border-radius: 30px;
+    padding: 5px;
+}
+p {
+    padding: 5px;
+}
+.form-group {
+    top: 180px;
+    width: 280px;
+    margin: 50px auto;
+    transition: .5s;
+}
+.input-fields {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+#private {
+    border: none;
+}
+.submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 40px auto;
+    background: #907c57;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}
+
+.error {
+    color: #f00;
+}
+
+.total {
+    display: inline;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.wrapper{
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+}
+.container {
+    width: 80%;
+    height: 50px;
+    margin: 20px;
+}

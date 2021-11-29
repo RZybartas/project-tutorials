@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="tutorials" href="./index.html">Tutorials</a>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./login.html">Log In</a></li>
+            </ul>
+        </nav>
+        </header>
+    <main>
+        <!-- Login form -->
+        <div class="form-box">
+            <h2>Login</h2>
+            <form class="form-group">
+                <input class="input-fields" type="email" name="email" placeholder="email" required>
+                <div class="email error "></div>
+                <input class="input-fields" type="password" name="password" placeholder="password" required>
+                <div class="pass error"></div>
+                <button  class="submit" type="submit">Login</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const form = document.querySelector("form");
+        const emailErr = document.querySelector(".email.error");
+        const passErr = document.querySelector(".pass.error");
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // Reset errors
+            emailErr.textContent = "";
+            passErr.textContent = "";
+            // Get the values
+            const email = form.email.value;
+            const password = form.password.value;
+            try {
+                const res = await fetch("http://localhost:3000/v1/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password,
+                    }),
+                });
+                const data = await res.json();
+
+                
+                if (data.error) {
+                    emailErr.textContent = "Incorrect email"
+                    passErr.textContent = "Incorrect  password"
+                } else {
+                    location.assign('./tutorials.html')
+
+                }
+
+                sessionStorage.setItem("token", data.token);
+
+                
+            } catch (error) {
+                console.log(error)
+            }
+            
+        })
+    </script>
+</body>
+</html>
